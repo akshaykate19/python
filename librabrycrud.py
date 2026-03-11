@@ -16,9 +16,26 @@ while True:
         else:
             print("Available books are :",books)
     elif choice==3:
-        pass
+        if len(books)>0:
+            old_book_tittle=input("Enter book tittle to update:").capitalize()
+            if old_book_tittle in books:
+                new_title=input("Enter book new title to update :").capitalize()
+                books[books.index(old_book_tittle)]=new_title.capitalize()
+                print(f"{old_book_tittle} Book title updated successfully!!")
+            else:
+                print(f"{old_book_tittle} Book title not found try again !!")
+        else:
+            print("No Books Available so first add the books!!")
     elif choice==4:
-        pass
+            if len(books)>0:
+                old_book_tittle=input("Enter book tittle to remove:").capitalize()
+                if old_book_tittle in books:
+                    books.remove(old_book_tittle.capitalize())
+                    print(f"{old_book_tittle}Book removed successfully !!")
+                else:
+                    print(f"{old_book_tittle} Book title not found try again !!")
+            else:
+                print("No Books Available so first add the books!!")
     elif choice==5:
         print("Thanks for using our services!!")
         break
